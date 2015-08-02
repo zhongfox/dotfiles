@@ -1,6 +1,7 @@
 # dir
 alias cdcode='cd ~/code/'
 alias cdwork='cd ~/code/work/'
+alias cddot='cd ~/.dotfiles/'
 alias cdzhe='cd ~/code/work/tao800_fire'
 alias cdnode='cd ~/code/work/zhe800_node'
 alias cdblog='cd ~/code/work/zhongfox.github.com'

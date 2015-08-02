@@ -11,6 +11,7 @@
 # cmd
 alias k='kill -9'
 alias g='grep -nir'
+alias t='type -a'
 alias v='view'
 alias vi='vim'
 alias c='clear'
@@ -19,3 +20,4 @@ alias mv='mv -i'
 alias h='history'
 alias ls='ls -F'
 alias ll='ls -alF'
+alias o='open -a "Google Chrome"'
