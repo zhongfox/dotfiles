@@ -5,6 +5,7 @@ alias cddot='cd ~/.dotfiles/'
 alias cdzhe='cd ~/code/work/tao800_fire'
 alias cdnode='cd ~/code/work/zhe800_node'
 alias cdblog='cd ~/code/work/zhongfox.github.com'
+alias cdd='cd ~/Downloads'
 
 #alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
