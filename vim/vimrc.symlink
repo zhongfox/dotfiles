@@ -4,7 +4,7 @@ let g:jellybeans_overrides = {
       \              'ctermfg': 'Black', 'ctermbg': 'Yellow',
       \              'attr': 'bold' },
       \}
-let g:jellybeans_use_lowcolor_black = 0 
+let g:jellybeans_use_lowcolor_black = 0
 colorscheme jellybeans "需要把http://www.vim.org/scripts/script.php?script_id=2555存入~/.vim/colors
 " 以下暂时没搞懂
 " set guifont=Monaco:h12
@@ -50,12 +50,10 @@ map <F5> :Tlist<cr>                "显隐列表
 "下面这个不能有注释
 map <F6> :Gblame<cr>
 map <F7> :Align =<cr>                "对其当前块等号
-map <F10> :w<cr>                   "保存
+map <F8> :Dash<cr>                   "Dash 查找
 "nnoremap <F9> :silent update<Bar>silent !google-chrome %:p &<CR> "ubuntu在chrome中打开文件
 nnoremap <F9> :silent update<Bar>!open -a Google\ Chrome %<CR> "mac在chrome中打开文件
-"map <F4> :set nopaste<cr>          "非粘贴模式
-"map <F5> :set nonumber<cr>         "有行号
-"map <F6> :set number<cr>           "无行号
+map <F10> :w<cr>                   "保存
 
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
@@ -68,63 +66,70 @@ let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
-set nocompatible               " be iMproved
-filetype off                   " required!
-
 "Show hidden files in NerdTree
 let NERDTreeShowHidden=1
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+function! SearchWord(word)
+    let @/ = '\<' . a:word . '\>'
+    normal n
+endfunction
+command! -nargs=1 SearchWord call SearchWord(<f-args>)
+nmap ? :SearchWord
 
-" let Vundle manage Vundle
-" " required!
-Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+"""""""""""""""""""Vundle"""""""""""""""""""""""""""""""""
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/snipMate'
-"Bundle 'mattn/zencoding-vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'mileszs/ack.vim'
-Bundle 'tyok/nerdtree-ack'
-Bundle 'groenewege/vim-less'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'slim-template/vim-slim'
-Bundle 'yaymukund/vim-rabl'
-"Bundle 'godlygeek/tabular'
-"Bundle 'plasticboy/vim-markdown'
-Bundle 'eikenberry/acp'
-Bundle 'nginx.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'edsono/vim-matchit'
-"Bundle 'vim-scripts/ruby-matchit'
-"Bundle 'mhinz/vim-signify'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'vim-scripts/Align'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'skalnik/vim-vroom'
-Bundle "pangloss/vim-javascript"
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle "scrooloose/syntastic"
+Plugin 'gmarik/Vundle.vim'
+
+" My Plugins here:
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
+
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/snipMate'
+"Plugin 'mattn/zencoding-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'mileszs/ack.vim'
+Plugin 'tyok/nerdtree-ack'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'slim-template/vim-slim'
+Plugin 'yaymukund/vim-rabl'
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
+Plugin 'eikenberry/acp'
+Plugin 'nginx.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'edsono/vim-matchit'
+"Plugin 'vim-scripts/ruby-matchit'
+"Plugin 'mhinz/vim-signify'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-scripts/Align'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'skalnik/vim-vroom'
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'scrooloose/syntastic'
 "在打开文件的时候检查
 let g:syntastic_check_on_open=1
 "let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
+"Plugin 'Lokaltog/powerline'
+Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 
-"Bundle 'Lokaltog/powerline'
-Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+Plugin 'rizzatti/dash.vim' " only for mac
+
 let g:Powerline_symbols = 'fancy'
 let Powerline_symbols = 'compatible'
 set laststatus=2 "始终显示状态栏
@@ -135,21 +140,6 @@ set laststatus=2 "始终显示状态栏
 " set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''}
 
 "set statusline=format "不明白 貌似没用
-
-filetype plugin indent on     " required!
 "
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-function! SearchWord(word)
-    let @/ = '\<' . a:word . '\>'
-    normal n
-endfunction
-command! -nargs=1 SearchWord call SearchWord(<f-args>)
-nmap ? :SearchWord
+call vundle#end()             " vundle required!
+filetype plugin indent on     " vundle required!
