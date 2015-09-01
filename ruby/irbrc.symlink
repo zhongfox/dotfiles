@@ -38,3 +38,7 @@ end
 def r
   reload!
 end
+
+#https://ruby-china.org/topics/26781
+require 'awesome_print'
+AwesomePrint.irb!
