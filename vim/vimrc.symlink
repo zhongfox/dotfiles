@@ -120,7 +120,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'skalnik/vim-vroom'
 Plugin 'pangloss/vim-javascript'
 
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic' " can not open maven project
 "在打开文件的时候检查
 let g:syntastic_check_on_open=1
 "let g:syntastic_ruby_checkers = ['mri', 'rubocop']
