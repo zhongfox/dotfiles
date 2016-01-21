@@ -7,6 +7,7 @@ alias cdnode='cd ~/code/work/zhe800_node'
 alias cdblog='cd ~/code/work/zhongfox.github.com'
 alias cdd='cd ~/Downloads'
 alias cdbook='cd ~/Documents/book'
+alias cdff='cd ~/Library/Application\ Support/Firefox/Profiles/iwn5v7ri.default/extensions'
 
 #alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
