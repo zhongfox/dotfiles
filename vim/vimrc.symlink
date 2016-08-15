@@ -46,7 +46,8 @@ vnoremap > >gv
 map <F2> :%s/\r*//g<cr>:%s/\s*$//g<cr>:noh<cr>   "先清除^M,然后移除行尾空格
 set pastetoggle=<F3>               "插入模式下转换粘贴模式
 map <F4> :let &number=1-&number<CR>"显隐行号
-map <F5> :Tlist<cr>                "显隐列表
+"map <F5> :Tlist<cr>                "显隐列表
+map <F5> :NERDTreeToggle<cr> "显隐Nerdtree
 "下面这个不能有注释
 map <F6> :Gblame<cr>
 map <F7> :Align =<cr>                "对其当前块等号
@@ -65,9 +66,6 @@ let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
 "set list "把制表符显示为^I,用$标示行尾（使用list分辨尾部的字符是tab还是空格）
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
-
-"Show hidden files in NerdTree
-let NERDTreeShowHidden=1
 
 function! SearchWord(word)
     let @/ = '\<' . a:word . '\>'
@@ -129,6 +127,7 @@ let g:syntastic_check_on_open=1
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 
 Plugin 'rizzatti/dash.vim' " only for mac
+Plugin 'fatih/vim-go'
 
 let g:Powerline_symbols = 'fancy'
 let Powerline_symbols = 'compatible'
@@ -143,3 +142,22 @@ set laststatus=2 "始终显示状态栏
 "
 call vundle#end()             " vundle required!
 filetype plugin indent on     " vundle required!
+
+
+
+
+" 关闭NERDTree快捷键
+"map <leader>t :NERDTreeToggle<CR> "F5代替
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+" 设置宽度
+let NERDTreeWinSize=31
+" 在终端启动vim时，自动打开NERDTree, 但是貌似没用
+let g:nerdtree_tabs_open_on_console_startup=1
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" 显示书签列表
+let NERDTreeShowBookmarks=1

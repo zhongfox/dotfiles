@@ -4,10 +4,12 @@ alias cdwork='cd ~/code/work/'
 alias cddot='cd ~/.dotfiles/'
 alias cdzhe='cd ~/code/work/tao800_fire'
 alias cdnode='cd ~/code/work/zhe800_node'
+alias cdjava='cd ~/code/java'
 alias cdblog='cd ~/code/work/zhongfox.github.com'
 alias cdd='cd ~/Downloads'
 alias cdbook='cd ~/Documents/book'
 alias cdff='cd ~/Library/Application\ Support/Firefox/Profiles/iwn5v7ri.default/extensions'
+alias cdn='cd /usr/local/etc/nginx'
 
 #alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
