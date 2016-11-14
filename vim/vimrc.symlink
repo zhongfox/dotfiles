@@ -53,7 +53,8 @@ map <F6> :Gblame<cr>
 map <F7> :Align =<cr>                "对其当前块等号
 map <F8> :Dash<cr>                   "Dash 查找
 "nnoremap <F9> :silent update<Bar>silent !google-chrome %:p &<CR> "ubuntu在chrome中打开文件
-nnoremap <F9> :silent update<Bar>!open -a Google\ Chrome %<CR> "mac在chrome中打开文件
+"mac在chrome中打开文件
+nnoremap <F9> :silent update<Bar>!open -a Google\ Chrome %<CR>
 map <F10> :w<cr>                   "保存
 
 nmap ]h <Plug>GitGutterNextHunk
@@ -102,8 +103,8 @@ Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'slim-template/vim-slim'
 Plugin 'yaymukund/vim-rabl'
-"Plugin 'godlygeek/tabular'
-"Plugin 'plasticboy/vim-markdown'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'eikenberry/acp'
 Plugin 'nginx.vim'
 Plugin 'tpope/vim-fugitive'
@@ -127,7 +128,11 @@ let g:syntastic_check_on_open=1
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 
 Plugin 'rizzatti/dash.vim' " only for mac
+
 Plugin 'fatih/vim-go'
+map <C-b> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
 
 let g:Powerline_symbols = 'fancy'
 let Powerline_symbols = 'compatible'

@@ -1,4 +1,4 @@
-export GOPATH=$PROJECTS/go/fox
+export GOPATH=/Users/zhonghua/code/work/go
 
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
