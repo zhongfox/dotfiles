@@ -119,10 +119,20 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'skalnik/vim-vroom'
 Plugin 'pangloss/vim-javascript'
 
-"Plugin 'scrooloose/syntastic' " can not open maven project
-"在打开文件的时候检查
-let g:syntastic_check_on_open=1
-"let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+Plugin 'scrooloose/syntastic' " can not open maven project
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_eslint_exec = 'eslint'
+let g:syntastic_javascript_eslint_args = "-c ~/.eslintrc.js"
 
 "Plugin 'Lokaltog/powerline'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
