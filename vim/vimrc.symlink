@@ -7,14 +7,13 @@ let g:jellybeans_overrides = {
 let g:jellybeans_use_lowcolor_black = 0
 colorscheme jellybeans "需要把http://www.vim.org/scripts/script.php?script_id=2555存入~/.vim/colors
 
-set tabstop=2
-set shiftwidth=2
+set autoindent noexpandtab tabstop=2 shiftwidth=2
+
 set hlsearch "设置搜索所有匹配高亮
 "set dictionary+=$HOME/.mydict
 "set dictionary+=/usr/share/dict/words
 set isk+=- "把-分割的单词视为一个整体
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
-set autoindent
 set cindent
 set sw=2
 set ts=2
@@ -149,6 +148,8 @@ let g:airline_powerline_fonts=1
 " let g:airline_symbols.whitespace = 'Ξ'
 "
 Plugin 'w0rp/ale'
+let g:ale_sign_column_always = 1
+"let g:ale_sign_error  = '⚡'
 let g:ale_sign_warning = '⚠️'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
