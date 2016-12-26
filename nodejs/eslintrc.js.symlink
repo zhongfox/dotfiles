@@ -5,9 +5,11 @@ module.exports = {
     es6: true
   },
   globals: {
-    "app": true
+    'app': true
   },
   rules: {
     'no-console': 'off',
+    'require-yield': 'off',
+    'indent': [ 'error', 2 ]
   }
 };
