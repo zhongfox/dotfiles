@@ -113,7 +113,10 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'skalnik/vim-vroom'
 Plugin 'pangloss/vim-javascript'
-" Plugin 'mkitt/tabline.vim'
+
+Plugin 'mkitt/tabline.vim'
+nnoremap H gT
+nnoremap L gt
 " hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
 " hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
 " hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
@@ -124,7 +127,7 @@ Plugin 'pangloss/vim-javascript'
 
 Plugin 'vim-airline/vim-airline' " vim-powerline 不支持ale, vim-airline支持
 set laststatus=2 "始终显示状态栏
-let g:airline#extensions#tabline#enabled = 1 "不是很明白
+"let g:airline#extensions#tabline#enabled = 1 " 和tabline.vim 冲突
 let g:airline_powerline_fonts=1
 
 " 以下这些都不需要, 其实关键是设置itme2的2个部分字体
