@@ -25,7 +25,7 @@ syntax on                      " 语法高亮
 "set cc=81
 set backspace=2 " make backspace work like most other apps
 
-let mapleader='\'
+let mapleader=','
 nnoremap < v<
 nnoremap > v>
 vnoremap < <gv
@@ -79,6 +79,12 @@ Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
 Plugin 'Lokaltog/vim-easymotion'
+map <Leader><Leader>f <Plug>(easymotion-w)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+map <Leader><leader>h <Plug>(easymotion-linebackward)
+map <Leader><leader>l <Plug>(easymotion-lineforward)
+
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tpope/vim-rails.git'
 
@@ -93,8 +99,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tyok/nerdtree-ack'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'slim-template/vim-slim'
-Plugin 'yaymukund/vim-rabl'
+"Plugin 'slim-template/vim-slim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -104,7 +109,7 @@ Plugin 'eikenberry/acp'
 Plugin 'nginx.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'edsono/vim-matchit'
+"Plugin 'edsono/vim-matchit'
 "Plugin 'vim-scripts/ruby-matchit'
 "Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
@@ -113,6 +118,10 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'skalnik/vim-vroom'
 Plugin 'pangloss/vim-javascript'
+Plugin 'heavenshell/vim-jsdoc'
+
+Plugin 'ruanyl/vim-fixmyjs'
+let g:fixmyjs_rc_path = '~/.eslintrc.js'
 
 Plugin 'mkitt/tabline.vim'
 nnoremap H gT
@@ -158,7 +167,7 @@ Plugin 'w0rp/ale'
 let g:ale_sign_column_always = 1
 "let g:ale_sign_error  = '⚡'
 let g:ale_sign_warning = '⚠️'
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-i> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_linters = {
       \   'javascript': ['eslint'],
@@ -186,9 +195,9 @@ let g:ale_linters = {
 Plugin 'rizzatti/dash.vim' " only for mac
 
 Plugin 'fatih/vim-go'
-map <C-b> :cnext<CR>
-map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+" map <C-b> :cnext<CR>
+" map <C-m> :cprevious<CR>
+" nnoremap <leader>a :cclose<CR>
 
 call vundle#end()             " vundle required!
 filetype plugin indent on     " vundle required!
