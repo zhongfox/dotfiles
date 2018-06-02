@@ -1,0 +1,4 @@
+{
+  "Disable": ["gotype"],
+  "Enable": ["gofmt", "golint", "gosimple", "vet", "staticcheck"]
+}

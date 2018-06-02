@@ -43,7 +43,6 @@ map <F8> :Dash<cr>                   "Dash 查找
 "nnoremap <F9> :silent update<Bar>silent !google-chrome %:p &<CR> "ubuntu在chrome中打开文件
 "mac在chrome中打开文件
 nnoremap <F9> :silent update<Bar>!open -a Google\ Chrome %<CR>
-map <F10> :w<cr>                   "保存
 
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
@@ -167,12 +166,20 @@ Plugin 'w0rp/ale'
 let g:ale_sign_column_always = 1
 "let g:ale_sign_error  = '⚡'
 let g:ale_sign_warning = '⚠️'
-nmap <silent> <C-i> <Plug>(ale_previous_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_linters = {
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
+      \   'go': ['gofmt', 'golint', 'go vet' ],
       \}
+
+"     \   'go': ['go build', 'gofmt', 'golint', 'gosimple', 'go vet', 'staticcheck'],
+" TODO
+"      \   'go': ['gometalinter'],
+" let g:ale_go_gometalinter_options = "--config=~/.dotfiles/nodejs/gometalinter.json.symlink"
+
+
 "set statusline+=%{ALEGetStatusLine()}   " 自动被vim-powerline展示在最后,不用设置
 "let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok'] "对vim-airline不起作用
 
@@ -199,6 +206,8 @@ Plugin 'fatih/vim-go'
 " map <C-m> :cprevious<CR>
 " nnoremap <leader>a :cclose<CR>
 
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+
 call vundle#end()             " vundle required!
 filetype plugin indent on     " vundle required!
 
@@ -215,6 +224,38 @@ let NERDTreeWinSize=31
 " 在终端启动vim时，自动打开NERDTree, 但是貌似没用
 let g:nerdtree_tabs_open_on_console_startup=1
 " 忽略一下文件的显示
-let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+let NERDTreeIgnore=['\.pyc','\~$']
 " 显示书签列表
 let NERDTreeShowBookmarks=1
+
+"go get -u github.com/jstemmer/gotags
+"brew install ctags-exuberant
+Plugin 'majutsushi/tagbar'
+nmap <F10> :TagbarToggle<CR>
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }

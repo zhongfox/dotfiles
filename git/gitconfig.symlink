@@ -4,8 +4,8 @@
 [hub]
         protocol = https
 [user]
-        name = zhonghua
-        email = zhonghua@cd.tuan800.com
+        name = foxzhong
+        email = foxzhong@tencent.com
 [credential]
         helper = osxkeychain
 [alias]
