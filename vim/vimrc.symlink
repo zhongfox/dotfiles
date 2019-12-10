@@ -31,6 +31,9 @@ nnoremap > v>
 vnoremap < <gv
 vnoremap > >gv
 
+" https://superuser.com/questions/321547/how-do-i-replace-paste-yanked-text-in-vim-without-yanking-the-deleted-lines
+vnoremap <leader>p "_dP
+
 map <F2> :%s/\r*//g<cr>:%s/\s*$//g<cr>:noh<cr>   "先清除^M,然后移除行尾空格
 set pastetoggle=<F3>               "插入模式下转换粘贴模式
 map <F4> :let &number=1-&number<CR>"显隐行号
@@ -103,6 +106,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 0
 
 Plugin 'eikenberry/acp'
 Plugin 'nginx.vim'
@@ -163,6 +167,7 @@ let g:airline_powerline_fonts=1
 " let g:airline_symbols.whitespace = 'Ξ'
 "
 Plugin 'w0rp/ale'
+let g:ale_echo_msg_format = '%linter% %s'
 let g:ale_sign_column_always = 1
 "let g:ale_sign_error  = '⚡'
 let g:ale_sign_warning = '⚠️'
@@ -178,6 +183,7 @@ let g:ale_linters = {
 " TODO
 "      \   'go': ['gometalinter'],
 " let g:ale_go_gometalinter_options = "--config=~/.dotfiles/nodejs/gometalinter.json.symlink"
+let g:ale_yaml_yamllint_options = "-c ~/.dotfiles/yaml/yamllint.yaml.symlink"
 
 
 "set statusline+=%{ALEGetStatusLine()}   " 自动被vim-powerline展示在最后,不用设置
@@ -259,3 +265,9 @@ let g:tagbar_type_go = {
 	\ 'ctagsbin'  : 'gotags',
 	\ 'ctagsargs' : '-sort -silent'
 \ }
+
+Plugin 'diepm/vim-rest-console'
+au! BufNewFile,BufRead *.rest set filetype=rest
+let g:vrc_show_command = 1
+let g:vrc_debug = 1
+let g:vrc_output_buffer_name = '__VRC_OUTPUT.<filetype>'

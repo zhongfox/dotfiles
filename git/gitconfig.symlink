@@ -43,3 +43,17 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[http "https://git.code.oa.com"]
+proxy = http://127.0.0.1:12639
+[http "http://git.code.oa.com"]
+proxy = http://127.0.0.1:12639
+[url "git@git.code.oa.com:"]
+insteadOf = https://git.code.oa.com/
+[url "git@git.code.oa.com:"]
+insteadOf = http://git.code.oa.com/
+
+# 以下必填，在工程根目录下执行go get git.tencent.com/tke/repo拉取不到代码时请检查是否存在该配置
+[url "git@git.tencent.com:"]
+insteadOf = https://git.tencent.com/
+[url "git@git.tencent.com:"]
+insteadOf = http://git.tencent.com/

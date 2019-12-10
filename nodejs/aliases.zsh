@@ -1,2 +1,2 @@
 #node
-alias hnode='node --use_strict --harmony'
+# alias hnode='node --use_strict --harmony'

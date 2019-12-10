@@ -1,0 +1,6 @@
+nnoremap gc :action CommentByLineComment<cr>
+vnoremap gc <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action CommentByLineComment<CR>
+vnoremap gb <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action CommentByBlockComment<CR>
+
+vnoremap gU <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action VimChangeCaseUpperMotion<CR>
+vnoremap gu <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action VimChangeCaseLowerVisual<CR>
