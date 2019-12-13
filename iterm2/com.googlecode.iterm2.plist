@@ -267,7 +267,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 706 400 129 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 509 620 392 0 0 1920 1057 </string>
+	<string>650 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-1496 2 606 469 -1920 -180 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -275,11 +275,11 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>92 66 1685 990 0 0 1920 1057 </string>
+	<string>-1080 -477 1080 1874 -1080 -500 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>738 297 586 353 0 0 1920 1057 </string>
+	<string>-1080 -500 1080 1897 -1080 -500 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1059 273 586 353 0 0 1920 1057 </string>
+	<string>1961 271 908 769 1920 180 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>218 421 572 353 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1043,10 +1043,12 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.0beta6</string>
-		<string>3.3.3beta2</string>
-		<string>3.3.0beta13</string>
+		<string>3.3.7beta3</string>
 		<string>3.3.0beta16</string>
 		<string>3.3.4beta1</string>
+		<string>3.3.0beta13</string>
+		<string>3.3.5beta1</string>
+		<string>3.3.3beta2</string>
 	</array>
 	<key>NoSyncCoprocessCommandsToIgnoreErrorOutput</key>
 	<array>
@@ -1055,9 +1057,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{-1080, -500}, {1080, 1920}}</string>
 		<key>topLeft</key>
-		<string>{306, 826}</string>
+		<string>{-1057, 1026}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1066,7 +1068,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>FB0BB06E-D014-4CCC-8224-EF06354769CA</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>50</integer>
+	<integer>73</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>576433209.76202703</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1584,6 +1586,22 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
@@ -1796,16 +1814,15 @@
 	</array>
 	<key>NoSyncSearchHistory2</key>
 	<array>
-		<string>user=</string>
-		<string>serverk</string>
-		<string>outbound|9000||server.debug.svc.cluster.local</string>
-		<string>ISTIO_META_NETWORK</string>
-		<string>source</string>
-		<string>NETW</string>
-		<string>netwo</string>
-		<string>kube-user</string>
-		<string>prod</string>
-		<string>gaia</string>
+		<string>ftl-client-view-index</string>
+		<string>ftl_view</string>
+		<string>172.31.132.52</string>
+		<string>ftl_view.Index</string>
+		<string>istio-ingressgateway</string>
+		<string>124.156.122.75</string>
+		<string> ftl-client-view-index</string>
+		<string>dmz ftl-client-view-index</string>
+		<string>service</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>549596397.36929798</real>
@@ -1881,11 +1898,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-17T15:05:17Z</date>
+	<date>2019-12-13T02:12:27Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.3.8beta1</string>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1949,6 +1968,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.4beta1</string>
+	<string>3.3.7beta3</string>
 </dict>
 </plist>
